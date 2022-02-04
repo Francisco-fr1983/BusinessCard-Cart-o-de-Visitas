@@ -12,11 +12,22 @@
         android:layout_height="wrap_content"
         android:text="@string/label_businesscard"
         android:layout_margin="16dp"
+        android:textColor="@color/Vermelho"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="24sp"
         android:textStyle="bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        tools:itemCount="15"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_Floating"
@@ -27,6 +38,7 @@
         app:maxImageSize="50dp"
         app:backgroundTint="@color/Vermelho"
         app:borderWidth="0dp"
+        app:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
