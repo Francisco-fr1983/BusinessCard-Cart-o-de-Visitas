@@ -19,12 +19,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="24sp"
         android:textStyle="bold"/>
+    <include
+        android:id="@+id/include_empty"
+        layout="@layout/empty_state"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="16dp"
         tools:itemCount="15"
+        android:scrollbars="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,6 +45,7 @@
         app:backgroundTint="@color/Vermelho"
         app:borderWidth="0dp"
         app:elevation="6dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
