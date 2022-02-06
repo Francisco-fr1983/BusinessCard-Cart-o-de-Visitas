@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">BusinessCard-Cartao-de-Visitas</string>
     <string name="label_businesscard">Cartão de Visitas</string>
+    <string name="name">NAME</string>
+    <string name="label_gravar">GRAVAR</string>
 </resources>
