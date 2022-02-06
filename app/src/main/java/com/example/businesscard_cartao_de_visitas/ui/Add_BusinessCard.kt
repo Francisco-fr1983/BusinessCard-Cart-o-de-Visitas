@@ -1,11 +1,12 @@
 package com.example.businesscard_cartao_de_visitas.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.businesscard_cartao_de_visitas.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.businesscard_cartao_de_visitas.databinding.ActivityAddBusinessCardBinding
 
 class Add_BusinessCard : AppCompatActivity() {
-    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
+
+    private val binding by lazy { ActivityAddBusinessCardBinding.inflate(layoutInflater)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
