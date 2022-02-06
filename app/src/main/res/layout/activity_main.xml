@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/quebra_cabeça_autismo_oficial"
     tools:context=".ui.MainActivity">
 
     <TextView
@@ -19,9 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="24sp"
         android:textStyle="bold"/>
-    <include
-        android:id="@+id/include_empty"
-        layout="@layout/empty_state"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
