@@ -22,4 +22,5 @@ class AddBusinessCard : AppCompatActivity() {
         }
 
     }
+
 }
