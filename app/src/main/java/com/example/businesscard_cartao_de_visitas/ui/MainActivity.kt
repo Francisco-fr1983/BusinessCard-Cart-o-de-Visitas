@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun insertListener() {
         binding.btnFloating.setOnClickListener {
-            val intent = Intent(this@MainActivity, ActivityAddBusinessCardBinding::class.java)
+            val intent = Intent(this@MainActivity, AddBusinessCard::class.java)
             startActivity(intent)
         }
     }

@@ -20,8 +20,6 @@ class AddBusinessCard : AppCompatActivity() {
             finish()
 
         }
-        binding.btnClose.setOnClickListener {
 
-        }
     }
 }
