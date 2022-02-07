@@ -25,15 +25,9 @@ abstract class AppDatabase : RoomDatabase() {
                 ).build()
                 INSTANCE = instance
                 instance
-
             }
-
         }
-
-
     }
-
-
 
     //Class AppDatabase faz o gerenciamento do Banco de dados que extendido do ROOM.
 }
