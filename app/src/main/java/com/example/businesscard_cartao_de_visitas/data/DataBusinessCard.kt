@@ -16,7 +16,7 @@ data class DataBusinessCard (
     val email: String,
     val corPersonalizada: String
 
-
+    //Banco de dados tipo tabelas
 
 
 )
