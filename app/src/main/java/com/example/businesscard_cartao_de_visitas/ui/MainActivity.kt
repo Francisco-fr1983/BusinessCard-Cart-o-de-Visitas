@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.observe
 import com.example.businesscard_cartao_de_visitas.databinding.ActivityMainBinding
 import com.example.businesscard_cartao_de_visitas.App
 
+@Suppress("COMPATIBILITY_WARNING")
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
@@ -20,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        getAllDataBusinessCard()
         insertListener()
     }
 
@@ -29,6 +31,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, AddBusinessCard::class.java)
             startActivity(intent)
         }
+    }
+    //Função para notificar as informações, para buscar as alterações dos cartões de visita.
+    private fun getAllDataBusinessCard() {
+        mainViewModel.getAll().observe(this, { dataBusinessCard ->
+
+        })
+
     }
 
 }
