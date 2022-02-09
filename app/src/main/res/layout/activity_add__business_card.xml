@@ -13,6 +13,7 @@
         android:layout_height="50dp"
         android:background="@color/black"
         android:src="@drawable/ic_close"
+        app:rippleColor="@color/Amarelo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
