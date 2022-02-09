@@ -18,10 +18,12 @@ class MainActivity : AppCompatActivity() {
         //Pois estamos injentando o repository dentro do ViewModel, para que faça o controle.
 
     }
+    private val adapter by lazy { AdapterBuninessCard() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        binding.rvCards.adapter = adapter
         getAllDataBusinessCard()
         insertListener()
     }
@@ -35,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     //Função para notificar as informações, para buscar as alterações dos cartões de visita.
     private fun getAllDataBusinessCard() {
         mainViewModel.getAll().observe(this, { dataBusinessCard ->
+            adapter.submitList(dataBusinessCard)
 
         })
 
