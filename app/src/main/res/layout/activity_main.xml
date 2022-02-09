@@ -44,7 +44,8 @@
         app:backgroundTint="@color/Vermelho"
         app:borderWidth="0dp"
         app:elevation="6dp"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:rippleColor="@color/purple_700"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
