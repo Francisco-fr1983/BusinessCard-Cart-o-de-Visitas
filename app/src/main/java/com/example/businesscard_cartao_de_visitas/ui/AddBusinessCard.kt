@@ -1,7 +1,9 @@
 package com.example.businesscard_cartao_de_visitas.ui
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
+import com.example.businesscard_cartao_de_visitas.R
 import androidx.appcompat.app.AppCompatActivity
 import com.example.businesscard_cartao_de_visitas.App
 import com.example.businesscard_cartao_de_visitas.databinding.ActivityAddBusinessCardBinding
@@ -38,6 +40,9 @@ class AddBusinessCard : AppCompatActivity() {
 
             )
             mainViewModel.insert(dataBusinessCard)
+            Toast.makeText(this, R.string.label_show_success, Toast.LENGTH_SHORT).show()
+            finish()
+
             //Com a criação do ViewModel, no AddBusinessCard.kt, e com a instancia do mainViewModel.insert(dataBusinessCard), desse jeito haverá a persistencia dos dados.
 
         }

@@ -3,4 +3,6 @@
     <string name="label_businesscard">Cartão de Visitas</string>
     <string name="name">NAME</string>
     <string name="label_gravar">GRAVAR</string>
+    <string name="label_show_success">Cartão Cadastro com sucesso!</string>
+
 </resources>
