@@ -45,6 +45,7 @@
         app:backgroundTint="@color/Vermelho"
         app:borderWidth="0dp"
         app:elevation="6dp"
+        android:layout_gravity="end|bottom"
         app:rippleColor="@color/Amarelo"
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
         app:layout_constraintBottom_toBottomOf="parent"

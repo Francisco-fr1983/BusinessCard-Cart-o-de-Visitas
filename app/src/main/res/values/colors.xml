@@ -10,6 +10,8 @@
     <color name="Vermelho">#f50000</color>
     <color name="Amarelo">#fffd00</color>
     <color name="Azulescuro">#3640c2</color>
+    <color name="Azulclaro">#4793c2</color>
+    <color name="Roxo">#5001a4</color>
 
 
 </resources>
