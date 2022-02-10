@@ -131,20 +131,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <TextView
-        android:id="@+id/tv_gravar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:elevation="6dp"
-        android:text="GRAVAR"
-        android:textColor="@color/Vermelho"
-        android:textSize="26dp"
-        app:layout_anchor="@id/btn_gravar"
-        app:layout_anchorGravity="center"
-        app:layout_constraintTop_toTopOf="@id/btn_gravar"
-        tools:layout_editor_absoluteX="194dp"
-        tools:ignore="MissingConstraints" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
