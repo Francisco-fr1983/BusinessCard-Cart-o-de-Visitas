@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title_novo_cartao">
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:hint="Empresa"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_name">
@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:hint="Telefone de Contato"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_empresa">
@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:hint="E-MAIL"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_phone">
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:hint="Cor de Fundo"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_email">
@@ -121,16 +121,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:rippleColor="@color/Amarelo"
+        app:rippleColor="@color/Vermelho"
         android:clickable="true"
         android:textColor="@color/black"
         android:layout_marginTop="25dp"
+        app:backgroundTint="@color/Azulescuro"
         app:layout_constraintTop_toBottomOf="@id/til_cor_de_fundo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-
+    <TextView
+        android:id="@+id/tv_gravar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:elevation="6dp"
+        android:text="GRAVAR"
+        android:textColor="@color/Vermelho"
+        android:textSize="26dp"
+        app:layout_anchor="@id/btn_gravar"
+        app:layout_anchorGravity="center"
+        app:layout_constraintTop_toTopOf="@id/btn_gravar"
+        tools:layout_editor_absoluteX="194dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
