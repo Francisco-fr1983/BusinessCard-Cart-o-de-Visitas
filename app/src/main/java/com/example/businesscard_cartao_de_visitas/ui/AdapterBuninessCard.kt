@@ -14,7 +14,9 @@ import com.example.businesscard_cartao_de_visitas.databinding.ItensBusinesscardB
 //Criar o adapter para pegar os dados que estão vindo da lista, e jogar na tela para o usuário ver, ele é responsável pela exibição dos dados de lista na tela.
 class AdapterBuninessCard: ListAdapter<DataBusinessCard, AdapterBuninessCard.ViewHolder>(DiffCallback()) {
 
-    var listenerShare: (View) -> Unit = {}
+
+    var listenerEdit: (View) -> Unit = {}
+    var listenerDelete: (View) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -35,9 +37,14 @@ class AdapterBuninessCard: ListAdapter<DataBusinessCard, AdapterBuninessCard.Vie
             binding.tvEmpresa.text = item.empresa
             binding.tvPhone.text = item.telefone
             binding.tvEmail.text = item.email
-            binding.mcvContent.setCardBackgroundColor(Color.parseColor(item.corPersonalizada))
-            binding.mcvContent.setOnClickListener{
-                listenerShare(it)
+            binding.mcvContent.setCardBackgroundColor(Color.parseColor(item.corPersonalizada)
+            )
+            binding.ivLapis.setOnClickListener {
+                listenerEdit(it)
+            }
+            binding.ivLixeira.setOnClickListener{
+                listenerDelete(it)
+
             }
 
         }

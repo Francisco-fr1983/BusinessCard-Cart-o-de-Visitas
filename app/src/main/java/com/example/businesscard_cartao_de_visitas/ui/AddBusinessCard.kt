@@ -38,6 +38,7 @@ class AddBusinessCard : AppCompatActivity() {
                 email = binding.tilEmail.editText?.text.toString(),
                 corPersonalizada = binding.tilCorDeFundo.editText?.text.toString()
 
+
             )
             mainViewModel.insert(dataBusinessCard)
             Toast.makeText(this, R.string.label_show_success, Toast.LENGTH_SHORT).show()
@@ -48,5 +49,7 @@ class AddBusinessCard : AppCompatActivity() {
         }
 
     }
-
+    companion object {
+        const val CARD_ID = "card_id"
+    }
 }

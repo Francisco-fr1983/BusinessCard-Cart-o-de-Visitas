@@ -14,5 +14,12 @@ class RepositoryBusinessCard (private val dao:DaoBusinessCard) {
             dao.insert(dataBusinessCard)
         }
     }
+
+    suspend fun deleteCard(dataBusinessCard: DataBusinessCard) {
+        dao.deleteCard(dataBusinessCard)
+
+    }
     fun getAll() = dao.getAll()
+
 }
+
