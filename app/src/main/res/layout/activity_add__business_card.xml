@@ -14,7 +14,7 @@
         android:background="@color/Azulclaro"
         android:src="@drawable/ic_close"
         app:iconTint="@color/black"
-        app:rippleColor="@color/Vermelho"
+        app:rippleColor="@color/Amarelo"
         android:clickable="true"
         android:layout_gravity="end|bottom"
         android:layout_marginTop="16dp"
@@ -49,6 +49,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:imeOptions="actionDone"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,6 +66,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:imeOptions="actionDone"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,6 +83,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:imeOptions="actionDone"
             android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,6 +100,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:imeOptions="actionDone"
             android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,6 +117,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:imeOptions="actionDone"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
