@@ -1,5 +1,6 @@
 package com.example.businesscard_cartao_de_visitas.data
 
+import android.view.View
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -14,12 +15,19 @@ class RepositoryBusinessCard (private val dao:DaoBusinessCard) {
             dao.insert(dataBusinessCard)
         }
     }
-
-    suspend fun deleteCard(dataBusinessCard: DataBusinessCard) {
-        dao.deleteCard(dataBusinessCard)
-
-    }
     fun getAll() = dao.getAll()
+
+    fun deleteCard(dataBusinessCard: DataBusinessCard) = runBlocking {
+        launch(Dispatchers.IO){
+            dao.deleteCard(dataBusinessCard)
+        }
+    }
+
+    //suspend fun deleteCard(dataBusinessCard: DataBusinessCard) {
+        //dao.deleteCard(dataBusinessCard)
+
+
+
 
 }
 

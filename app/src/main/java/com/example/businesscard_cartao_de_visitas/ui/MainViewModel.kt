@@ -19,12 +19,17 @@ class MainViewModel(private val repositoryBusinessCard: RepositoryBusinessCard) 
         return repositoryBusinessCard.getAll()
     }
 
-    suspend fun deleteCard(dataBusinessCard: DataBusinessCard) {
+    fun deleteCard(dataBusinessCard: DataBusinessCard) {
         repositoryBusinessCard.deleteCard(dataBusinessCard)
 
 
+    //fun deleteCard(dataBusinessCard: DataBusinessCard) {
+        //viewModelScope.launch (Dispatchers.IO ) {repositoryBusinessCard.deleteCard(dataBusinessCard)}
+
 
     }
+
+
 
 
 }

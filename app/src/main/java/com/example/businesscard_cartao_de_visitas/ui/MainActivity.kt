@@ -1,11 +1,10 @@
 package com.example.businesscard_cartao_de_visitas.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.example.businesscard_cartao_de_visitas.App
-import com.example.businesscard_cartao_de_visitas.data.DataBusinessCard
 import com.example.businesscard_cartao_de_visitas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -35,13 +34,15 @@ class MainActivity : AppCompatActivity() {
         adapter.listenerEdit = {
             val intent = Intent(this, AddBusinessCard::class.java)
             intent.putExtra(AddBusinessCard.CARD_ID, it.id)
-            startActivityForResult(intent, UPDATE_CARD)
+            startActivityForResult(intent, CREATE_NEW_TASK)
         }
         adapter.listenerDelete = {
+           //mainViewModel.deleteCard()
 
-            //mainViewModel.deleteCard(dataBusinessCard = DataBusinessCard(this))
 
         }
+
+
 
     }
     private fun getAllDataBusinessCard() {
@@ -51,6 +52,6 @@ class MainActivity : AppCompatActivity() {
     }
     companion object{
         private const val CREATE_NEW_TASK = 1000
-        private const val UPDATE_CARD = 1001
+
     }
 }

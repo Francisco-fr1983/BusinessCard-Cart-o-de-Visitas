@@ -122,12 +122,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:rippleColor="@color/Vermelho"
+        android:src="@drawable/ic_save"
         android:clickable="true"
-        android:textColor="@color/black"
         android:layout_marginTop="25dp"
         app:backgroundTint="@color/Azulescuro"
         app:layout_constraintTop_toBottomOf="@id/til_cor_de_fundo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBottomOf="@color/Vermelho"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
