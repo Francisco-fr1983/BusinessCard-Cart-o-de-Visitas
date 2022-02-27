@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnLixeira.setOnClickListener {
             val dataBusinessCard = DataBusinessCard(
-                     id = 0,nome = toString(),empresa = toString(),telefone = toString(),email = toString(),corPersonalizada = toString()
+                     id = 2,nome = toString(),empresa = toString(),telefone = toString(),email = toString(),corPersonalizada = toString()
 
             )
             mainViewModel.deleteCard(dataBusinessCard)

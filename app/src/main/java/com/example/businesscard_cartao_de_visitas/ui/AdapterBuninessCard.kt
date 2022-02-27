@@ -50,6 +50,10 @@ class AdapterBuninessCard: ListAdapter<DataBusinessCard, AdapterBuninessCard.Vie
                 listenerDelete(it)
             }
 
+            binding.ivShare.setOnClickListener {
+                listenerShare(it)
+            }
+
         }
 
     }
