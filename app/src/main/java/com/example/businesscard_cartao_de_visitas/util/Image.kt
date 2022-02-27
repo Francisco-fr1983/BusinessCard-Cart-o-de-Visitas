@@ -81,10 +81,10 @@ class Image {
             }
         }
 
-        private fun shareIntent(context: Context, image: Uri) {
+        private fun shareIntent(context: Context, imageURI: Uri) {
             val shareIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_STREAM, image)
+                putExtra(Intent.EXTRA_STREAM, imageURI)
                 type = "image/jpeg"
             }
             context.startActivity(
