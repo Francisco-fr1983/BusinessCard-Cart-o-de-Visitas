@@ -42,7 +42,7 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_add"
         app:maxImageSize="50dp"
-        app:backgroundTint="@color/Vermelho"
+        app:backgroundTint="@color/Azulclaro"
         app:borderWidth="0dp"
         app:elevation="6dp"
         android:layout_gravity="end|bottom"
