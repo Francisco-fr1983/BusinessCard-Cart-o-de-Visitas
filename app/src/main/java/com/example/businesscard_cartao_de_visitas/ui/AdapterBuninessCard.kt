@@ -12,10 +12,11 @@ import com.example.businesscard_cartao_de_visitas.databinding.ItensBusinesscardB
 
 
 //Criar o adapter para pegar os dados que estão vindo da lista, e jogar na tela para o usuário ver, ele é responsável pela exibição dos dados de lista na tela.
+
 class AdapterBuninessCard: ListAdapter<DataBusinessCard, AdapterBuninessCard.ViewHolder>(DiffCallback()) {
 
-
-    var listenerEdit: (View) -> Unit = {}
+    //Eventos -> listenerEdit e listenerDelete
+    var listenerEdit: (View, DataBusinessCard) -> Unit = { _, _: DataBusinessCard -> }
     var listenerDelete: (View) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,10 +30,11 @@ class AdapterBuninessCard: ListAdapter<DataBusinessCard, AdapterBuninessCard.Vie
         holder.bind(getItem(position))
     }
 
+
     inner class ViewHolder(
             private val binding: ItensBusinesscardBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind (item:DataBusinessCard) {
+        fun bind(item: DataBusinessCard) {
             binding.tvName.text = item.nome
             binding.tvEmpresa.text = item.empresa
             binding.tvPhone.text = item.telefone
@@ -40,23 +42,37 @@ class AdapterBuninessCard: ListAdapter<DataBusinessCard, AdapterBuninessCard.Vie
             binding.mcvContent.setCardBackgroundColor(Color.parseColor(item.corPersonalizada)
             )
             binding.ivLapis.setOnClickListener {
-                listenerEdit(it)
+                listenerEdit(binding.ivLapis, item)
             }
-            binding.ivLixeira.setOnClickListener{
-                listenerDelete(it)
 
+            binding.ivLixeira.setOnClickListener {
+                listenerDelete(it)
             }
 
         }
+
     }
 
 }
 
 class DiffCallback: DiffUtil.ItemCallback<DataBusinessCard>() {
-    override fun areItemsTheSame(oldItem: DataBusinessCard, newItem: DataBusinessCard) = oldItem == newItem
+    override fun areItemsTheSame(oldItem: DataBusinessCard, newItem: DataBusinessCard) :Boolean {
+        return  oldItem.id == newItem.id &&
+                oldItem.nome == newItem.nome &&
+                oldItem.email == newItem.email &&
+                oldItem.empresa == newItem.empresa &&
+                oldItem.corPersonalizada == newItem.corPersonalizada
+    }
 
-    override fun areContentsTheSame(oldItem: DataBusinessCard, newItem: DataBusinessCard) = oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: DataBusinessCard, newItem: DataBusinessCard): Boolean {
+        return oldItem.id == newItem.id &&
+                oldItem.nome == newItem.nome &&
+                oldItem.email == newItem.email &&
+                oldItem.empresa == newItem.empresa &&
+                oldItem.corPersonalizada == newItem.corPersonalizada
+    }
 
 }
+
 
 //Após finalização do adapter, temos que chamar ele lá na MainActivity.

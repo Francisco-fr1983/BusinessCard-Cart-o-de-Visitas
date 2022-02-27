@@ -1,6 +1,8 @@
 package com.example.businesscard_cartao_de_visitas.data
 
-import android.view.View
+
+
+import androidx.annotation.WorkerThread
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -11,23 +13,26 @@ class RepositoryBusinessCard (private val dao:DaoBusinessCard) {
     //Repository precisa injetar o nosso DAO
 
     fun insert(dataBusinessCard: DataBusinessCard) = runBlocking {
-        launch(Dispatchers.IO){
+        launch(Dispatchers.IO) {
             dao.insert(dataBusinessCard)
+        }
+    }
+    fun updateCard(dataBusinessCard: DataBusinessCard) = runBlocking {
+        launch(Dispatchers.IO){
+            dao.updateCard(dataBusinessCard)
+        }
+    }
+
+    @WorkerThread
+    fun deleteCard(dataBusinessCard: DataBusinessCard) = runBlocking {
+        launch(Dispatchers.IO) {
+            dao.deleteCard(dataBusinessCard)
         }
     }
     fun getAll() = dao.getAll()
 
-    fun deleteCard(dataBusinessCard: DataBusinessCard) = runBlocking {
-        launch(Dispatchers.IO){
-            dao.deleteCard(dataBusinessCard)
-        }
-    }
-
-    //suspend fun deleteCard(dataBusinessCard: DataBusinessCard) {
-        //dao.deleteCard(dataBusinessCard)
-
-
-
+    fun findById(dataBusinessCard: Int): DataBusinessCard = dao.findById(dataBusinessCard)
 
 }
+
 

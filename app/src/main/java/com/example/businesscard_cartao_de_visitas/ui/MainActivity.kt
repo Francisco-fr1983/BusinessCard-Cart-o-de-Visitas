@@ -1,12 +1,18 @@
 package com.example.businesscard_cartao_de_visitas.ui
 
+
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.businesscard_cartao_de_visitas.App
+import com.example.businesscard_cartao_de_visitas.R
+import com.example.businesscard_cartao_de_visitas.data.DataBusinessCard
 import com.example.businesscard_cartao_de_visitas.databinding.ActivityMainBinding
 
+
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
@@ -15,8 +21,9 @@ class MainActivity : AppCompatActivity() {
         MainViewModelFactory((application as App).repository)
     }
 
-    private val adapter by lazy { AdapterBuninessCard() }
-
+    private val adapter: AdapterBuninessCard by lazy {
+        AdapterBuninessCard()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,24 +34,31 @@ class MainActivity : AppCompatActivity() {
         insertListener()
     }
 
+
     private fun insertListener() {
         binding.btnFloating.setOnClickListener {
             startActivityForResult(Intent(this, AddBusinessCard::class.java), CREATE_NEW_TASK)
         }
-        adapter.listenerEdit = {
-            val intent = Intent(this, AddBusinessCard::class.java)
-            intent.putExtra(AddBusinessCard.CARD_ID, it.id)
-            startActivityForResult(intent, CREATE_NEW_TASK)
+        binding.btnLixeira.setOnClickListener {
+            val dataBusinessCard = DataBusinessCard(
+                    id = 1,nome = toString(),empresa = toString(),telefone = toString(),email = toString(),corPersonalizada = toString()
+
+            )
+            mainViewModel.deleteCard(dataBusinessCard)
+            Toast.makeText(this, R.string.label_show_success, Toast.LENGTH_SHORT).show()
+
+
+            //Com a criação do ViewModel, no AddBusinessCard.kt, e com a instancia do mainViewModel.insert(dataBusinessCard), desse jeito haverá a persistencia dos dados.
+
         }
-        adapter.listenerDelete = {
-           //mainViewModel.deleteCard()
-
-
+        adapter.listenerEdit = { card, databusinessCard ->
+            val intent = Intent(this, AddBusinessCard::class.java
+            )
+            intent.putExtra(AddBusinessCard.CARD_ID, databusinessCard.id)
+            startActivity(intent)
         }
-
-
-
     }
+
     private fun getAllDataBusinessCard() {
         mainViewModel.getAll().observe(this, { dataBusinessCard ->
             adapter.submitList(dataBusinessCard)
@@ -52,6 +66,6 @@ class MainActivity : AppCompatActivity() {
     }
     companion object{
         private const val CREATE_NEW_TASK = 1000
-
+        private const val UPDATE_CARD = 1001
     }
 }

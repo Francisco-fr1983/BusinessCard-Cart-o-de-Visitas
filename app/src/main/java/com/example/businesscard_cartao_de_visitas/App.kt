@@ -8,7 +8,11 @@ class App : Application() {
 
     //App na hora que a class App iniciar, temos que instanciar os AppDatabase e RepositoryBusinessCard.
 
-    val database by lazy { AppDatabase.getDatabase(this) }
-    val repository by lazy { RepositoryBusinessCard(database.daoBusinessCard()) }
+    private val database: AppDatabase by lazy {
+        AppDatabase.getDatabase(this)
+    }
+    val repository: RepositoryBusinessCard by lazy {
+        RepositoryBusinessCard(database.daoBusinessCard())
+    }
 
 }

@@ -15,17 +15,19 @@ interface DaoBusinessCard {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(dataBusinessCard: DataBusinessCard)
-
-    @Update
-    suspend fun updateCard(dataBusinessCard: DataBusinessCard)
+    //Lond é o id do registro que foi incluido no DataBusinessCard=>@Entity(indices = [Index("id, unique = true")])
 
     @Delete
     suspend fun deleteCard(dataBusinessCard: DataBusinessCard)
 
-    //Deleta todas as DataBusinessCard
-    //@Query("DELETE FROM databusinesscard")
-    //fun deleteAll()
+    @Update
+    fun updateCard(dataBusinessCard: DataBusinessCard)
 
+    //@Query("DELETE FROM DataBusinessCard WHERE Id = :id")
+    //suspend fun deleteCard(id: Int?)
+
+    @Query("SELECT * FROM DataBusinessCard WHERE id = :dataBusinessCardid")
+    fun findById(dataBusinessCardid:Int) :DataBusinessCard
 
 
 }
