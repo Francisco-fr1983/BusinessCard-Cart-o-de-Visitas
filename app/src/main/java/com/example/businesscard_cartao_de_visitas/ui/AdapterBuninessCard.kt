@@ -18,6 +18,7 @@ class AdapterBuninessCard: ListAdapter<DataBusinessCard, AdapterBuninessCard.Vie
     //Eventos -> listenerEdit e listenerDelete
     var listenerEdit: (View, DataBusinessCard) -> Unit = { _, _: DataBusinessCard -> }
     var listenerDelete: (View) -> Unit = {}
+    var listenerShare: (View) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)

@@ -41,11 +41,11 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnLixeira.setOnClickListener {
             val dataBusinessCard = DataBusinessCard(
-                    id = +0,nome = toString(),empresa = toString(),telefone = toString(),email = toString(),corPersonalizada = toString()
+                     id = 0,nome = toString(),empresa = toString(),telefone = toString(),email = toString(),corPersonalizada = toString()
 
             )
             mainViewModel.deleteCard(dataBusinessCard)
-            Toast.makeText(this, R.string.label_show_success, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.label_show_success2, Toast.LENGTH_SHORT).show()
 
 
             //Com a criação do ViewModel, no AddBusinessCard.kt, e com a instancia do mainViewModel.insert(dataBusinessCard), desse jeito haverá a persistencia dos dados.
@@ -56,6 +56,10 @@ class MainActivity : AppCompatActivity() {
             )
             intent.putExtra(AddBusinessCard.CARD_ID, databusinessCard.id)
             startActivity(intent)
+
+        }
+        adapter.listenerShare = { card ->
+
         }
     }
 

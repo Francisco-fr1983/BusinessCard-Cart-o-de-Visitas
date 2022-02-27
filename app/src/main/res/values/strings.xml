@@ -4,5 +4,7 @@
     <string name="name">NAME</string>
     <string name="label_gravar">GRAVAR</string>
     <string name="label_show_success">Cartão Cadastro com sucesso!</string>
+    <string name="label_show_success2">Cartão Excluído com sucesso!</string>
+    <string name="label_share">Compartilhar</string>
 
 </resources>
