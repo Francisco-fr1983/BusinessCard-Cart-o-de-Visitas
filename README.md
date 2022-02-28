@@ -13,20 +13,24 @@ Veja a telas do aplicativo.
 
 Conhecimentos Abordados
 
-ROOM \n
+ROOM 
 
-DAOS \n
+DAOS 
 
-REPOSITORY \n
+REPOSITORY 
 
-CLASS DATA \n
+CLASS DATA 
 
-AppDatabase \n
+AppDatabase 
 
 MainlViewModel
+
 Adapter
+
 MainActivity
+
 View Binding
+
 
 
 Trabalhar e entende a persistência de dados, foi uma boa experiência, criar uma base, usar a abstração de persisteência do DAOS para fazer as Querys, o Repository faz a logica de mandar para o banco de dados usando o DAOS, logo após uma função é chamado no MainViewModel que tem uma private val repository no seu construtor da sua classe, que é extendido de ViewModel, a ViewModel faz o gerencialmento, que lança a função na MainAcitivity para que seja dado um insert ou um delete.
