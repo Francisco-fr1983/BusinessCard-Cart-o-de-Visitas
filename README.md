@@ -13,11 +13,15 @@ Veja a telas do aplicativo.
 
 Conhecimentos Abordados
 
-ROOM
-DAOS
-REPOSITORY
-CLASS DATA
-AppDatabase
+ROOM \n
+
+DAOS \n
+
+REPOSITORY \n
+
+CLASS DATA \n
+
+AppDatabase \n
 
 MainlViewModel
 Adapter
