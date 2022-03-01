@@ -3,7 +3,7 @@
  
  Olá este projeto foi desenvolvido em Kotlin, aplicativo cartão de visitas ou BusinessCard
 
-[Welcome to the BusinessCard-Cart-o-de-Visitas](https://www.youtube.com/watch?v=AN3CnW6IaNw) 
+Video do app funcionando==> [Welcome to the BusinessCard-Cart-o-de-Visitas](https://www.youtube.com/watch?v=AN3CnW6IaNw) 
 
 
 Veja a telas do aplicativo.
